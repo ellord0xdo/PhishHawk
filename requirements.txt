@@ -1,0 +1,7 @@
+   echo "requests
+   beautifulsoup4
+   dnspython
+   python-whois
+   tabulate
+   html5lib
+   PyQt5" > requirements.txt
