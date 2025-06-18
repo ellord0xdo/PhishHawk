@@ -23,8 +23,6 @@ import ipaddress
 import math # For entropy calculation
 
 # --- Configuration ---
-# Developed by Ebrahim Aref – Cyber Security Engineer @ Sunrun
-# Tool: PhishHawk – Advanced Email & URL Threat Scanner
 
 # Configure logging
 logging.basicConfig(
@@ -411,7 +409,7 @@ def check_google_safe_browsing(url_to_check):
     api_url = "https://safebrowsing.googleapis.com/v4/threatMatches:find"
     body = {
         "client": {
-            "clientId": "phishi-detector", # Replace with your client ID if registered
+            "clientId": "phishhawk-scanner", # Updated branding
             "clientVersion": "1.1"
         },
         "threatInfo": {
