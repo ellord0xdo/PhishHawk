@@ -1,3 +1,9 @@
+"""
+PhishHawk – Advanced Phishing Analysis Tool
+Author: Ebrahim Aref – Cyber Security Engineer @ Sunrun
+
+A Python-based tool for scanning emails and URLs to detect potential phishing threats.
+"""
 import os
 import re
 import requests
@@ -28,9 +34,9 @@ import math # For entropy calculation
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename='phishhawk_scanner.log'
+    filename='phishhawk.log'
 )
-logger = logging.getLogger('phishhawk_scanner')
+logger = logging.getLogger('phishhawk')
 
 # Color codes for terminal output
 RED, GREEN, YELLOW, END = '\033[91m', '\033[1;32m', '\033[93m', '\033[0m'
@@ -82,13 +88,14 @@ def runPEnv():
     print(f'''
 {GREEN}__________.__    .__       .__  ________          __                 __
 \______   \  |__ |__| _____|__| \______ \   _____/  |_  ____   _____/  |_  ___________
- |     ___/  |  \|  |/  ___/  |  |    |  \_/ __ \   __\/ __ \_/ ___\   __\/  _ \_  __ \\
+ |     ___/  |  \|  |/  ___/  |  |    |  \_/ __ \   __\/ __ \_/ ___\   __\/  _ \_  __ \
  |    |   |   Y  \  |\___ \|  |  |    `   \  ___/|  | \  ___/\  \___|  | (  <_> )  | \/
  |____|   |___|  /__/____  >__| /_______  /\___  >__|  \___  >\___  >__|  \____/|__|
                \/        \/             \/     \/          \/     \/
                                                                                    {END}
 
-                        [ {RED}PhishHawk – Advanced Email & URL Threat Scanner  {END}]
+                [ {RED}PhishHawk  {END}|{RED}   Unmasking phishing  {END}]
+                [ {YELLOW}Ebrahim Aref – Cyber Security Engineer @ Sunrun{END} ]
 ''')
 
 def colorize_value(value, threshold=None):
@@ -409,7 +416,7 @@ def check_google_safe_browsing(url_to_check):
     api_url = "https://safebrowsing.googleapis.com/v4/threatMatches:find"
     body = {
         "client": {
-            "clientId": "phishhawk-scanner", # Updated branding
+            "clientId": "phishi-detector", # Replace with your client ID if registered
             "clientVersion": "1.1"
         },
         "threatInfo": {
@@ -2703,7 +2710,7 @@ class EmailAuthenticationChecker:
 def main():
     """Main function to handle user interaction and initiate analysis."""
     runPEnv()
-    print(f"Welcome to PhishHawk – Advanced Email & URL Threat Scanner!")
+    print(f"Welcome to Phishi Detector!")
     # Reminder about dependencies
     print(f"{YELLOW}Note:{END} Ensure required libraries are installed (requests, beautifulsoup4, dnspython, python-whois, tabulate, html5lib).")
     print(f"{YELLOW}Tip:{END} Create a 'requirements.txt' file and run 'pip install -r requirements.txt'.")
@@ -2770,7 +2777,7 @@ def main():
                  print(f"{RED}Error: URL analysis returned no result or an unexpected format.{END}")
 
         elif choice == 'Q':
-            print("Exiting PhishHawk – Advanced Email & URL Threat Scanner. Stay safe!")
+            print("Exiting Phishi Detector. Stay safe!")
             break
         else:
             print(f"{RED}Invalid choice. Please enter 1, 2, or Q.{END}")
