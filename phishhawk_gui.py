@@ -1,3 +1,9 @@
+"""
+PhishHawk GUI – Advanced Phishing Analysis Tool
+Author: Ebrahim Aref – Cyber Security Engineer @ Sunrun
+
+A Python-based GUI for scanning emails and URLs to detect potential phishing threats.
+"""
 import sys
 import os
 import re
@@ -1223,7 +1229,7 @@ class AnalysisWorker(QObject):
 class PhishiDetectorApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("PhishHawk – Advanced Email & URL Threat Scanner")
+        self.setWindowTitle("Phishi Detector GUI")
         self.setGeometry(100, 100, 950, 750) # Slightly larger window
 
         # --- Dark Theme Stylesheet ---
@@ -1414,7 +1420,7 @@ class PhishiDetectorApp(QMainWindow):
         self.layout.setSpacing(18) # Adjust spacing
 
         # --- Title ---
-        self.title_label = QLabel("PhishHawk – Advanced Email & URL Threat Scanner")
+        self.title_label = QLabel("Phishi Detector")
         self.title_label.setObjectName("titleLabel")
         self.title_label.setAlignment(Qt.AlignCenter)
         self.layout.addWidget(self.title_label)
